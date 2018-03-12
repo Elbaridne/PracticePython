@@ -1,4 +1,4 @@
-# Generadores de un grupo cíclico de orden (x)
+# Generadores de un grupo ciclico de orden (x)
 # gen(x) devuelve lista de generadores
 
 
