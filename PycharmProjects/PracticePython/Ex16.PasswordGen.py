@@ -1,11 +1,12 @@
 palabras = ["pez","loquito","dieciocho","memoria","lahascagado"]
+simbolos = ["!","..","?"]
 
 import random
 def construirPassword(a):
     password = ''
     if(a == 2):
         rannum = random.randint(30,400)
-        password = str(rannum) + palabras[random.randint(0,4)] + "??" + palabras[random.randint(0,len(palabras)-1)].capitalize()
+        password = str(rannum) + palabras[random.randint(0,4)] + simbolos[random.randint(0,len(simbolos)-1)] + palabras[random.randint(0,len(palabras)-1)].capitalize()
         print(password)
     if(a == 1):
         rannum = random.randint(90,1000)

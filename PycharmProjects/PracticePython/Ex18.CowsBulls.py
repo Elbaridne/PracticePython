@@ -2,40 +2,35 @@ import random
 
 
 def rannum():
-    return random.randint(0, 9999)
+    return random.randint(1000, 9999)
 
 def cow():
     play = rannum()
 
 
     playset = list(str(play))
-    print(playset)
+
     guess = 0
     while play != guess:
         guess = input("Introduce un numero: ")
         if(len(guess)>4 or len(guess)<4):
             continue
         else:
+            bulls, cows = 0,0
             playguess = list(str(guess))
+            for num in range(0,len(playguess)):
+                    if playset[num] == playguess[num]: #Si coinciden los indices, el usuario ha acertado un digito del numero
+                        cows += 1 #Cows++, hemos encontrado un digito
+                    elif playguess[num] in playset: #Sin embargo, puede que no haya acertado el indice pero si el digito
+                        bulls += 1 #Bulls++, hemos acertado un digito incorrectamente posicionado
 
-            bulls = 0
-            cows = 0
-            alreadyguessed = list()
-            for guss in playguess:
-                if not alreadyguessed.__contains__(guss):
-                    alreadyguessed.append(guess)
-                else :
 
-                    try:
-                        playset.index(guss) == -1
-                    except ValueError:
-                        continue
-                    if playguess.index(guss) == playset.index(guss):
-                        cows+= 1
 
-                        continue
 
-            print("Guess: {0} - COWS = {1} BULLS = {2}".format(guess,cows,len(alreadyguessed)))
+
+
+
+            print("Guess: {0} - COWS = {1} BULLS = {2}".format(guess,cows,bulls))
             if(cows==4):
                 print("Contratulations!")
                 break
