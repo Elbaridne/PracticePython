@@ -2,7 +2,7 @@ def readfile(path):
     with open('{0}'.format(path),'r') as f:
         elem = f.readline()
         Darth, Lea , Luke = 0, 0, 0
-        while elem :
+        while elem : #TODO YEIBA
             if elem == "Darth":
                 Darth += 1
             elif elem == "Lea":
