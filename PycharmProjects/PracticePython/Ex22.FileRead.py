@@ -1,15 +1,19 @@
 def readfile(path):
+    Darth, Lea, Luke = 0, 0, 0
     with open('{0}'.format(path),'r') as f:
         elem = f.readline()
-        Darth, Lea , Luke = 0, 0, 0
-        while elem : #TODO YEIBA
-            if elem == "Darth":
+        while elem != '':
+            if elem == "Darth\n":
                 Darth += 1
-            elif elem == "Lea":
+            elif elem == "Lea\n":
                 Lea += 1
-            elif elem == "Luke":
+            elif elem == "Luke\n":
                 Luke += 1
             elem = f.readline()
-        print("Darth Vader : {0}    Luke : {1}  Lea : {2}".format(Darth,Luke,Lea))
+        print(elem)
+
+
+
+        print("Darth Vader : {0}  Luke : {1}  Lea : {2}".format(Darth,Luke,Lea))
 
 readfile("nameslist.txt")

@@ -1,17 +1,29 @@
-def timeConversion(s):
-    spl = s.split(':')
-    ampm = spl[-1].rstrip('AMPM')
-    am, pm = "AM", "PM"
-    if am in s:
-        if spl[0] == '12':
-            spl[0] = '00'
+a = 73
+c = a % 5
+if(c == 3):
+    a = a + 2
+if(c == 4):
+    a = a + 1
 
-    else:
-        if spl[0] != '12':
-            spl[0] = int(spl[0]) + 12
-    return "{0}:{1}:{2}".format(spl[0], spl[1], ampm)
+print(a)
+
+import sys
 
 
-s = input().strip()
-result = timeConversion(s)
-print(result)
+def solve(grades):
+    for el in grades:
+        c = el % 5
+        if(c == 3):
+            el = el + 2
+        if(c == 4):
+            el = el + 1
+    return el
+
+n = int(input().strip())
+grades = []
+grades_i = 0
+for grades_i in range(n):
+    grades_t = int(input().strip())
+    grades.append(grades_t)
+result = solve(grades)
+print("\n".join(map(str, result)))
