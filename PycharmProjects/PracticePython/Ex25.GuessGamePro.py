@@ -8,7 +8,7 @@ opt = ('>','<','=')
 guess = [i for i in range(1,101)]
 
 def game(arr):
-    numg = arr[int(len(arr)/2)]
+    numg = arr[int(len(arr)/2)-1]
     print("Es el valor mayor, menor o igual que... " + str(numg))
     print(arr)
     inp = input("<, >, =    ")

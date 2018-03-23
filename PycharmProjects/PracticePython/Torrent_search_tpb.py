@@ -1,3 +1,4 @@
+import subprocess , os , sys
 import requests
 from bs4 import BeautifulSoup
 
@@ -16,12 +17,16 @@ def check_search(built_url):
         soup = BeautifulSoup(pag_req,"html.parser")
         hrefs = soup.find_all('a', href=True)
         for ref in hrefs:
-            pass
+            print(ref)
         print(hrefs)
 
 
 
+def magnet(mgn):
+    ssoo = sys.platform
+    if ssoo.startswith('win32'):
+        os.startfile(mgn)
+    if ssoo.startswith('linux'):
+        subprocess.Popen(['xdg-open', magnet],stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
-
-check_search(search_builder("Mario mola"))
-check_search(search_builder("Adobe Photoshop"))
+magnet(strin)
