@@ -1,8 +1,16 @@
 def gameboard(size):
+    name = []
     for num in range(size):
-        str = "--- " * size
-        str2= "|   " * size
-        print(str)
-        print(str2)
+        name.append([0]*size)
 
-gameboard(4)
+        '''
+            str = "--- " * size
+            str2= "|   " * size
+            print(str)
+            print(str2)
+        '''
+    for num in name:
+        print(num)
+
+
+gameboard(5)
